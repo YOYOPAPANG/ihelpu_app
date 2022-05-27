@@ -177,7 +177,7 @@ class _EditProfilenewState extends State<EditProfilenew> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("แก้ไขโปรไฟล์"),
+        title: const Text("แก้ไขโปรไฟล์ "),
         centerTitle: true,
         leading: IconButton(
           icon: const Icon(CupertinoIcons.arrow_turn_down_left),
@@ -381,7 +381,7 @@ class _EditProfilenewState extends State<EditProfilenew> {
                                               mainAxisSize: MainAxisSize.min,
                                               children: const <Widget>[
                                                 Text(
-                                                  'อีเมลล์',
+                                                  'อีเมลล์ ',
                                                   style: TextStyle(
                                                       fontSize: 16.0,
                                                       fontWeight:
@@ -424,7 +424,7 @@ class _EditProfilenewState extends State<EditProfilenew> {
                                               mainAxisSize: MainAxisSize.min,
                                               children: <Widget>[
                                                 const Text(
-                                                  'เบอร์โทรศัพท์',
+                                                  'เบอร์โทรศัพท์ ',
                                                   style: TextStyle(
                                                       fontSize: 16.0,
                                                       fontWeight:
@@ -681,7 +681,7 @@ class _EditProfilenewState extends State<EditProfilenew> {
                                               mainAxisSize: MainAxisSize.min,
                                               children: const <Widget>[
                                                 Text(
-                                                  'ความสัมพันธ์',
+                                                  'ความสัมพันธ์ ',
                                                   style: TextStyle(
                                                       fontSize: 16.0,
                                                       fontWeight:
@@ -718,7 +718,7 @@ class _EditProfilenewState extends State<EditProfilenew> {
                                               mainAxisSize: MainAxisSize.min,
                                               children: const <Widget>[
                                                 Text(
-                                                  'เบอร์โทรศัพท์',
+                                                  'เบอร์โทรศัพท์ ',
                                                   style: TextStyle(
                                                       fontSize: 16.0,
                                                       fontWeight:

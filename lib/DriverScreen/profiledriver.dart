@@ -230,7 +230,7 @@ class _ProfileDriverPageState extends State<ProfileDriverPage> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: <Widget>[
                                       Text(
-                                        'เบอร์โทรศัพท์',
+                                        'เบอร์โทรศัพท์ ',
                                         style: TextStyle(
                                             fontSize: 16.0,
                                             fontWeight: FontWeight.bold),
@@ -272,7 +272,7 @@ class _ProfileDriverPageState extends State<ProfileDriverPage> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: <Widget>[
                                       Text(
-                                        'อีเมล',
+                                        'อีเมลล์ ',
                                         style: TextStyle(
                                             fontSize: 16.0,
                                             fontWeight: FontWeight.bold),

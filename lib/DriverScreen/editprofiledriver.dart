@@ -357,7 +357,7 @@ class _EditProfileDriverState extends State<EditProfileDriver> {
                                               mainAxisSize: MainAxisSize.min,
                                               children: <Widget>[
                                                 Text(
-                                                  'เบอร์โทรศัพท์',
+                                                  'เบอร์โทรศัพท์ ',
                                                   style: TextStyle(
                                                       fontSize: 16.0,
                                                       fontWeight:

@@ -257,7 +257,7 @@ class _ProfilePage2State extends State<ProfilePage2> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: const <Widget>[
                                       Text(
-                                        'อีเมลล์',
+                                        'อีเมลล์ ',
                                         style: TextStyle(
                                             fontSize: 16.0,
                                             fontWeight: FontWeight.bold),
@@ -299,7 +299,7 @@ class _ProfilePage2State extends State<ProfilePage2> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: const <Widget>[
                                       Text(
-                                        'เบอร์โทรศัพท์',
+                                        'เบอร์โทรศัพท์ ',
                                         style: TextStyle(
                                             fontSize: 16.0,
                                             fontWeight: FontWeight.bold),
@@ -545,7 +545,7 @@ class _ProfilePage2State extends State<ProfilePage2> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: const <Widget>[
                                       Text(
-                                        'ความสัมพันธ์',
+                                        'ความสัมพันธ์ ',
                                         style: TextStyle(
                                             fontSize: 16.0,
                                             fontWeight: FontWeight.bold),
@@ -582,7 +582,7 @@ class _ProfilePage2State extends State<ProfilePage2> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: const <Widget>[
                                       Text(
-                                        'เบอร์โทรศัพท์',
+                                        'เบอร์โทรศัพท์ ',
                                         style: TextStyle(
                                             fontSize: 16.0,
                                             fontWeight: FontWeight.bold),
