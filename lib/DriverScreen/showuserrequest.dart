@@ -78,9 +78,8 @@ class _ShowUserRequestState extends State<ShowUserRequest> {
               child: AppBar(
                 automaticallyImplyLeading: false,
                 title: Text(
-                  'แสดงชื่อผู้ขอความช่วยเหลือ ' +
-                      widget.list[0]['user_username'],
-                  style: TextStyle(color: Colors.white, fontSize: 18),
+                  widget.list[0]['user_username'] + ' ขอความช่วยเหลือ ',
+                  style: TextStyle(color: Colors.white, fontSize: 30),
                 ),
                 centerTitle: true,
                 backgroundColor: Colors.greenAccent[400],
@@ -128,7 +127,8 @@ class _ShowUserRequestState extends State<ShowUserRequest> {
                 ),
                 Container(
                   child: TextButton(
-                    style: TextButton.styleFrom(backgroundColor: Colors.red),
+                    style: TextButton.styleFrom(
+                        backgroundColor: Colors.greenAccent[400]),
                     onPressed: () {
                       MapUtil.openMap(
                           double.parse(widget.list[widget.i]['user_lat']),
@@ -138,6 +138,7 @@ class _ShowUserRequestState extends State<ShowUserRequest> {
                       'เปิดแผนที่',
                       style: TextStyle(
                         color: Colors.white,
+                        fontSize: 20,
                       ),
                     ),
                   ),

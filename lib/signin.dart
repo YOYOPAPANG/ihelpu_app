@@ -116,12 +116,20 @@ class _SignInPageState extends State<SignInPage> {
                           RequiredValidator(errorText: 'กรุณากรอกรหัสผ่าน '),
                       decoration: InputDecoration(
                         hintText: 'รหัสผ่าน',
-                        prefixIcon: Icon(
-                          Icons.lock,
-                          color: Colors.orange[600],
+                        prefixIcon: Icon(Icons.lock, color: Colors.orange[600]),
+                        suffixIcon: IconButton(
+                          icon:
+                              Icon(Icons.visibility, color: Colors.orange[600]),
+                          onPressed: () {
+                            setState(() {
+                              if (isHiddenPassword == true) {
+                                isHiddenPassword = false;
+                              } else {
+                                isHiddenPassword = true;
+                              }
+                            });
+                          },
                         ),
-                        suffixIcon:
-                            Icon(Icons.visibility, color: Colors.orange[600]),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30)),
                       ),

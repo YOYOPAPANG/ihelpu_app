@@ -91,7 +91,7 @@ class _AcceptofficerState extends State<Acceptofficer> {
                   style: TextStyle(color: Colors.white, fontSize: 32),
                 ),
                 centerTitle: true,
-                backgroundColor: Colors.orangeAccent[600],
+                backgroundColor: Colors.orange,
               ),
             ),
             body: Container(
@@ -352,8 +352,7 @@ class _ShowofficerState extends State<Showofficer> {
             Padding(
               padding: const EdgeInsets.all(0),
               child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      primary: Colors.greenAccent[400]),
+                  style: ElevatedButton.styleFrom(primary: Colors.orange),
                   onPressed: () {
                     _callNumber(widget.list[0]['officer_tel']);
                   },
@@ -366,6 +365,7 @@ class _ShowofficerState extends State<Showofficer> {
       )
     ]));
   }
+
   _callNumber(String phoneNumber) async {
     String number = phoneNumber;
     await FlutterPhoneDirectCaller.callNumber(number);

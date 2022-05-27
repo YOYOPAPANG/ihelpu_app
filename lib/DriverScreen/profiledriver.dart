@@ -69,7 +69,7 @@ class _ProfileDriverPageState extends State<ProfileDriverPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Account"),
+          title: Text("บัญชี"),
           centerTitle: true,
           leading: IconButton(
             icon: Icon(CupertinoIcons.arrow_turn_down_left),

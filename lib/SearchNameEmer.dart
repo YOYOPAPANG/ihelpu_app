@@ -7,10 +7,9 @@ import 'package:ihelpu_app/ipcon.dart';
 import 'package:ihelpu_app/mainmenu.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
-  //หน้านี้ไม่ใช่แล้ว XXX
+//หน้านี้ไม่ใช่แล้ว XXX
 
 class SearchNameEmerPage extends StatefulWidget {
-
   String SearchNameEmercall;
   SearchNameEmerPage({required this.SearchNameEmercall});
 
@@ -168,6 +167,7 @@ class EmergencyCallData extends StatelessWidget {
                           child: Text(
                             listEmer[i]['emercall_name'],
                             style: TextStyle(fontSize: 18, color: Colors.black),
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
                       ],
@@ -181,14 +181,16 @@ class EmergencyCallData extends StatelessWidget {
                             listEmer[i]['emercall_tel'],
                             style: TextStyle(
                                 fontSize: 18, color: Colors.redAccent[700]),
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
                       ],
                     ),
                   ],
                 ),
-                trailing:
-                    new Icon(Icons.local_phone, color: Colors.red, size: 32),
+                // trailing:
+                //     new Icon(Icons.local_phone,
+                //     color: Colors.red, size: 32),
               ),
             ),
           ),
@@ -227,8 +229,6 @@ class EmergencyCallData extends StatelessWidget {
     ).show();
   }
 }
-
-
 
 // _launchPhoneURL(String phoneNumber) async {
 //   String url = 'tel:' + phoneNumber;

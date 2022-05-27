@@ -112,8 +112,19 @@ class _SignInpageDriverState extends State<SignInpageDriver> {
                         hintText: 'รหัสผ่าน',
                         prefixIcon:
                             Icon(Icons.lock, color: Colors.greenAccent[400]),
-                        suffixIcon: Icon(Icons.visibility,
-                            color: Colors.greenAccent[400]),
+                        suffixIcon: IconButton(
+                          icon: Icon(Icons.visibility,
+                              color: Colors.greenAccent[400]),
+                          onPressed: () {
+                            setState(() {
+                              if (isHiddenPassword == true) {
+                                isHiddenPassword = false;
+                              } else {
+                                isHiddenPassword = true;
+                              }
+                            });
+                          },
+                        ),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30)),
                       ),

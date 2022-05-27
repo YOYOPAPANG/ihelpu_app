@@ -47,7 +47,7 @@ class _HomepageDriverState extends State<HomepageDriver> {
               child: AppBar(
                 automaticallyImplyLeading: false,
                 title: Text(
-                  'Driver ihelp U',
+                  'Driver ihelpU',
                   style: TextStyle(color: Colors.white, fontSize: 36),
                 ),
                 centerTitle: true,
@@ -132,7 +132,8 @@ class _ItemlistState extends State<Itemlist> {
                     return ShowUserRequest(list: widget.list, i: i);
                   }));
                 },
-                title: Text(widget.list[i]['user_tel'] +
+                title: Text('เบอร์: ' +
+                    widget.list[i]['user_tel'] +
                     "\n" +
                     'ชื่อ: ' +
                     widget.list[i]['user_fullname'] +

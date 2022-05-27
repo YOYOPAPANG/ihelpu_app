@@ -148,7 +148,7 @@ class _EditProfileDriverState extends State<EditProfileDriver> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Edit Profile Driver"),
+        title: Text("แก้ไข้ข้อมูล"),
         centerTitle: true,
         leading: IconButton(
           icon: Icon(CupertinoIcons.arrow_turn_down_left),
@@ -236,7 +236,8 @@ class _EditProfileDriverState extends State<EditProfileDriver> {
                                                       color: Colors.white,
                                                       width: 4,
                                                     ),
-                                                    color: Colors.orange[600]),
+                                                    color: Colors
+                                                        .greenAccent[400]),
                                                 child: IconButton(
                                                   padding: EdgeInsets.all(0),
                                                   iconSize: 25,
@@ -402,7 +403,7 @@ class _EditProfileDriverState extends State<EditProfileDriver> {
                                               mainAxisSize: MainAxisSize.min,
                                               children: <Widget>[
                                                 Text(
-                                                  'อีเมลล์',
+                                                  'อีเมลล์ ',
                                                   style: TextStyle(
                                                       fontSize: 16.0,
                                                       fontWeight:

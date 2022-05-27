@@ -82,7 +82,7 @@ class _WaitingPageState extends State<WaitingPage> {
                   style: TextStyle(color: Colors.white, fontSize: 32),
                 ),
                 centerTitle: true,
-                backgroundColor: Colors.orangeAccent[600],
+                backgroundColor: Colors.orange,
                 leading: IconButton(
                   padding: EdgeInsets.only(top: 8, left: 15),
                   onPressed: () {
@@ -120,7 +120,7 @@ class _WaitingPageState extends State<WaitingPage> {
                           padding: const EdgeInsets.all(15),
                           child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                  primary: Colors.greenAccent[400]),
+                                  primary: Colors.orange),
                               onPressed: () {
                                 setState(() {
                                   timer?.cancel();

@@ -185,16 +185,16 @@ class _CaseScreenState extends State<CaseScreen> {
                                           child: Column(
                                             children: [
                                               Text(
-                                                "Officer",
+                                                "เจ้าหน้าที่",
                                                 style: TextStyle(
                                                     color: Colors.white,
-                                                    fontSize: 24),
+                                                    fontSize: 20),
                                               ),
                                               Text(
                                                 "${data.data![0]['officer_fullname']}",
                                                 style: TextStyle(
                                                     color: Colors.white,
-                                                    fontSize: 20),
+                                                    fontSize: 14),
                                               )
                                             ],
                                           ),
@@ -232,16 +232,16 @@ class _CaseScreenState extends State<CaseScreen> {
                                           child: Column(
                                             children: [
                                               Text(
-                                                "User",
+                                                "ผู้ใช้งาน",
                                                 style: TextStyle(
                                                     color: Colors.white,
-                                                    fontSize: 24),
+                                                    fontSize: 20),
                                               ),
                                               Text(
                                                 "${data.data![0]['user_fullname']}",
                                                 style: TextStyle(
                                                     color: Colors.white,
-                                                    fontSize: 20),
+                                                    fontSize: 16),
                                               )
                                             ],
                                           ),
@@ -260,7 +260,7 @@ class _CaseScreenState extends State<CaseScreen> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      "ชื่อ : ${data.data![0]['user_fullname']} เพศ : ${data.data![0]['user_sex']} อายุ : ${data.data![0]['user_age']} ปี",
+                                      "ชื่อ : ${data.data![0]['user_fullname']} เพศ : ${data.data![0]['user_sex']} ",
                                       style: TextStyle(
                                           color: Colors.white, fontSize: 19),
                                     ),
@@ -269,6 +269,10 @@ class _CaseScreenState extends State<CaseScreen> {
                                         style: TextStyle(
                                             color: Colors.white, fontSize: 19)),
                                     Text("เบอร์ : ${data.data![0]['user_tel']}",
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 19)),
+                                    Text(
+                                        "เบอร์ญาติ : ${data.data![0]['relation_tel']}",
                                         style: TextStyle(
                                             color: Colors.white, fontSize: 19)),
                                   ],
@@ -281,9 +285,9 @@ class _CaseScreenState extends State<CaseScreen> {
                                 width: MediaQuery.of(context).size.width,
                                 child: GoogleMap(
                                   markers: _markers,
-                                  zoomControlsEnabled: false,
+                                  zoomControlsEnabled: true,
                                   mapType: MapType.normal,
-                                  myLocationButtonEnabled: false,
+                                  myLocationButtonEnabled: true,
                                   myLocationEnabled: true,
                                   onMapCreated: _onMapCreated,
                                   initialCameraPosition: CameraPosition(
@@ -318,7 +322,9 @@ class _CaseScreenState extends State<CaseScreen> {
                                                   children: [
                                                     TextButton(
                                                       onPressed: () {
-                                                        _callNumber(user_tel
+                                                        _callNumber(data
+                                                            .data![0]
+                                                                ['user_tel']
                                                             .toString());
                                                         Navigator.pop(context);
                                                       },

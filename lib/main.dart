@@ -10,16 +10,19 @@ import 'DriverScreen/homepagedriver.dart';
 import 'dart:convert';
 import 'ipcon.dart';
 import 'package:http/http.dart' as http;
+
 void main() {
   runApp(MaterialApp(
     home: MyApp(),
     debugShowCheckedModeBanner: false,
   ));
 }
+
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
 }
+
 class _MyAppState extends State<MyApp> {
   String username = "";
   String usertype = "";
@@ -41,8 +44,8 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<List> getData() async {
-    final response = await http.get(
-        Uri.parse(("http://${ipcon}/ihelpu/getuserid.php?user_id=${username}")));
+    final response = await http.get(Uri.parse(
+        ("http://${ipcon}/ihelpu/getuserid.php?user_id=${username}")));
     return json.decode(response.body);
   }
 
@@ -51,6 +54,7 @@ class _MyAppState extends State<MyApp> {
     getUserid();
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List>(
@@ -70,6 +74,7 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+
 class Body extends StatelessWidget {
   final List list;
   final username;
@@ -206,7 +211,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 15,
                 ),
               ),
-              Text('Create Your Account?',
+              Text('ยังไม่มีบัชชีใช่ไหม ?',
                   style: TextStyle(fontSize: 16, color: Colors.black)),
               SizedBox(height: 15),
               SizedBox(
@@ -241,4 +246,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-

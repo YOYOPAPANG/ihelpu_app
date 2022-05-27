@@ -170,6 +170,7 @@ class EmergencyCallData extends StatelessWidget {
                           child: Text(
                             listEmer[i]['emercall_name'],
                             style: TextStyle(fontSize: 18, color: Colors.black),
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
                       ],
@@ -183,14 +184,16 @@ class EmergencyCallData extends StatelessWidget {
                             listEmer[i]['emercall_tel'],
                             style: TextStyle(
                                 fontSize: 18, color: Colors.redAccent[700]),
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
                       ],
                     ),
                   ],
                 ),
-                trailing:
-                    const Icon(Icons.local_phone, color: Colors.red, size: 32),
+                // trailing:
+                //     const Icon(Icons.local_phone,
+                //     color: Colors.red, size: 32),
               ),
             ),
           ),
