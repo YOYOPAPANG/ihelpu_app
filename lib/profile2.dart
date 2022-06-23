@@ -629,7 +629,7 @@ class _ProfilePage2State extends State<ProfilePage2> {
                                     Navigator.of(context).push(
                                         MaterialPageRoute(
                                             builder: (BuildContext context) {
-                                      return EditProfilenew(
+                                      return EditProfilenew(//ส่งไปหน้าแก้ไขโปรไฟล
                                         fullname: fullname.text,
                                         user_date: user_date.text,
                                         email: email.text,
@@ -662,7 +662,7 @@ class _ProfilePage2State extends State<ProfilePage2> {
                                     Navigator.of(context).push(
                                         MaterialPageRoute(
                                             builder: (BuildContext context) {
-                                      return EditPassPage(
+                                      return EditPassPage(//ส่งไปยังแก้ไขรหัสผ่าน
                                         user_id: user_id,
                                       );
                                     }));

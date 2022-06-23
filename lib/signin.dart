@@ -18,9 +18,9 @@ class _SignInPageState extends State<SignInPage> {
   TextEditingController passWord = TextEditingController();
 
   Future login() async {
-    var url = Uri.parse("http://$ipcon/ihelpu/login.php");
+    var url = Uri.parse("http://$ipcon/ihelpu/login.php");//ค่าไอดีผู้ใช้
     var response = await http.post(url,
-        body: {"user_username": userName.text, "user_password": passWord.text});
+        body: {"user_username": userName.text, "user_password": passWord.text});//ให้แสดงชื่อและรหัสผ่านออกมา
     var data = json.decode(response.body);
     print(data);
 
@@ -29,7 +29,7 @@ class _SignInPageState extends State<SignInPage> {
       preferences.setString('user_username', data);
       setState(() {
         Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-          return MainMenuPage();
+          return MainMenuPage();//ถ้าสามารถล็อคอินได้สำเร็จให้ส่งเข้าที่หน้าหลัก
         }));
       });
     } else {
@@ -39,7 +39,7 @@ class _SignInPageState extends State<SignInPage> {
             type: ArtSweetAlertType.warning,
             title: "ไม่สามารถเข้าสู่ระบบได้",
             text: "โปรดตรวจสอบความถูกต้องของ \n username และ password ของท่าน",
-          ));
+          ));//ตัวตรวจสอบความถูกต้องคอยวาลิเดดข้อมูลที่รับเข้ามา
     }
   }
 
@@ -148,7 +148,7 @@ class _SignInPageState extends State<SignInPage> {
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
                           login();
-                        }
+                        }//วาลิเดตข้อมูลว่าค่าที่รับเข้ามาถูกต้องตามดาต้าเบสไหม
                       },
                       child: Text(
                         'ล็อคอิน',
@@ -171,7 +171,7 @@ class _SignInPageState extends State<SignInPage> {
                           borderRadius: BorderRadius.circular(30)),
                       color: Colors.orange[600],
                       onPressed: () {
-                        Navigator.of(context).pop();
+                        Navigator.of(context).pop();//ปุ่มย้อนกลับ
                       },
                       child: Text(
                         'ย้อนกลับ',

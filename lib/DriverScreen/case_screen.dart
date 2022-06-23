@@ -125,7 +125,7 @@ class _CaseScreenState extends State<CaseScreen> {
       final response = await http.post(
           Uri.parse("http://$ipcon/ihelpu/driverscreen/updateofficerlocal.php"),
           body: {"officer_id": officer_id, "lat": latO, "lng": longO});
-    });
+    });//อัพเดตค่าเจ้าหน้าที่อญู่ตลอด
 
     // print(data2);
   }
@@ -188,14 +188,14 @@ class _CaseScreenState extends State<CaseScreen> {
                                                 "เจ้าหน้าที่",
                                                 style: TextStyle(
                                                     color: Colors.white,
-                                                    fontSize: 20),
+                                                    fontSize: 25),
                                               ),
-                                              Text(
-                                                "${data.data![0]['officer_fullname']}",
-                                                style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontSize: 14),
-                                              )
+                                              // Text(
+                                              //   "${data.data![0]['officer_fullname']}",
+                                              //   style: TextStyle(
+                                              //       color: Colors.white,
+                                              //       fontSize: 14),
+                                              // )
                                             ],
                                           ),
                                         ),
@@ -235,14 +235,14 @@ class _CaseScreenState extends State<CaseScreen> {
                                                 "ผู้ใช้งาน",
                                                 style: TextStyle(
                                                     color: Colors.white,
-                                                    fontSize: 20),
+                                                    fontSize: 25),
                                               ),
-                                              Text(
-                                                "${data.data![0]['user_fullname']}",
-                                                style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontSize: 16),
-                                              )
+                                              // Text(
+                                              //   "${data.data![0]['user_fullname']}",
+                                              //   style: TextStyle(
+                                              //       color: Colors.white,
+                                              //       fontSize: 16),
+                                              // )
                                             ],
                                           ),
                                         ),
@@ -442,7 +442,7 @@ class _CaseScreenState extends State<CaseScreen> {
                                   success(data.data![0]['request_id_prime']);
                                   Navigator.push(context, MaterialPageRoute(
                                       builder: (BuildContext context) {
-                                    return SuccessScreen();
+                                    return SuccessScreen();//ส่งไปหน้าสำเร็จ
                                   }));
                                 },
                                 child: Padding(

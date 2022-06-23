@@ -41,7 +41,7 @@ class _HomepageDriverState extends State<HomepageDriver> {
     return SafeArea(
         child: Scaffold(
             key: _scaffoldKey,
-            drawer: DrawerMaindriver(),
+            drawer: DrawerMaindriver(),//ส่งไปยังดอเวอเจ้าฟหน้าที่
             appBar: PreferredSize(
               preferredSize: Size.fromHeight(60.0),
               child: AppBar(
@@ -63,7 +63,7 @@ class _HomepageDriverState extends State<HomepageDriver> {
             ),
             body: Container(
               child: FutureBuilder<List>(
-                future: getdata(),
+                future: getdata(),//แสดงข้อมูลละติจูดลองติจูด
                 builder: (BuildContext context, AsyncSnapshot snapshot) {
                   if (snapshot.hasData) {
                     return Itemlist(
@@ -106,9 +106,9 @@ class _ItemlistState extends State<Itemlist> {
       "officer_id": _dusername,
       "officer_lat": latitude.toString(),
       "officer_lng": longitude.toString()
-    });
+    });//เมื่อกดรับเคสแล้วจะเปลี่ยนค่าจาก 2 เป็น 1และส่งค่าเจ้าหน้าที่ ที่รับเคสละลองส่งไปแสดงยังดาต้าเบส
     Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {
-      return CaseScreen(
+      return CaseScreen(//ส่งไปยังเคสสกีน
         request_id: request_id,
       );
     }));
@@ -129,7 +129,7 @@ class _ItemlistState extends State<Itemlist> {
                   print(widget.list[i]['request_id']);
                   Navigator.of(context)
                       .push(MaterialPageRoute(builder: (BuildContext context) {
-                    return ShowUserRequest(list: widget.list, i: i);
+                    return ShowUserRequest(list: widget.list, i: i);//ส่งคำร้องไผปยังหน้ารีเคส หน้ารีเคสจะเรียงตามระยะทางของผู้ขอความช่วยเหลืออัติโนมัติ
                   }));
                 },
                 title: Text('เบอร์: ' +

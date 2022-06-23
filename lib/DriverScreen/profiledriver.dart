@@ -317,7 +317,7 @@ class _ProfileDriverPageState extends State<ProfileDriverPage> {
                                     Navigator.of(context).push(
                                         MaterialPageRoute(
                                             builder: (BuildContext context) {
-                                      return EditProfileDriver(
+                                      return EditProfileDriver(//ไปยังหน้าแก้ไขโปรไฟล์
                                         organi_name: organi_name.text,
                                         fullname: fullname.text,
                                         email: email.text,
@@ -343,7 +343,7 @@ class _ProfileDriverPageState extends State<ProfileDriverPage> {
                                     Navigator.of(context).push(
                                         MaterialPageRoute(
                                             builder: (BuildContext context) {
-                                      return EditPassDriverPage(
+                                      return EditPassDriverPage(//แก้ไขรหัสผ่าน
                                         officer_id: officer_id,
                                       );
                                     }));

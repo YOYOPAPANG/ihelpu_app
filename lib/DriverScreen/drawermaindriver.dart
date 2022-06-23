@@ -145,6 +145,7 @@ class DrawerMaindriverMenu extends StatelessWidget {
                       Navigator.of(context).push(
                           MaterialPageRoute(builder: (BuildContext context) {
                         return ProfileDriverPage(
+                          //ส่งไปยังหน้าโปรไฟล์ไดร์เวอร์
                           list: list[0],
                         );
                       }));
@@ -161,7 +162,7 @@ class DrawerMaindriverMenu extends StatelessWidget {
                       logout();
                       Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (context) {
-                        return MyApp();
+                        return MyApp(); //กลับมาที่หน้าเริ่มต้น
                       }));
                     },
                   ),

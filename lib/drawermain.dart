@@ -29,7 +29,7 @@ class _DrawerMainState extends State<DrawerMain> {
     final response = await http.get(
         Uri.parse("http://$ipcon/ihelpu/getuserid.php?user_id=${username}"));
     return json.decode(response.body);
-  }
+  }//ดึงค่าจากดาต้าเบส
 
   @override
   void initState() {
@@ -53,7 +53,7 @@ class _DrawerMainState extends State<DrawerMain> {
           return Center(child: CircularProgressIndicator());
         }
       },
-    );
+    );//แสดงชื่อขึ้นมาจากการดึงดาต้าเบส
   }
 }
 
@@ -86,7 +86,7 @@ class Drawermenu extends StatelessWidget {
             Container(
               child: Column(
                 children: [
-                  list[0]['user_images'] == ''
+                  list[0]['user_images'] == ''//ดึงค่าขากอาร์เรย์ 0 ของยูสเสอร์ที่ล็อคอิน
                       ? Container(
                           child: CircleAvatar(
                             radius: 20,
@@ -147,7 +147,7 @@ class Drawermenu extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (context) => ProfilePage2(
-                                    list: list[0],
+                                    list: list[0],//ส่งไปหน้าโปรไฟล์
                                   )));
                     },
                   ),

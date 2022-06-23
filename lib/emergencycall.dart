@@ -81,7 +81,7 @@ class _EmergencyCallPageState extends State<EmergencyCallPage> {
                             setState() {
                               getSearch = v;
                               print(getSearch);
-                            }
+                            }//เมื่อกดเซิสจะบันทึกค่าและแสดงหน้าที่เสิชเท่านั้น
                           },
                           decoration: InputDecoration(
                             hintText: 'ค้นหาสายฉุกเฉิน',
@@ -118,7 +118,7 @@ class _EmergencyCallPageState extends State<EmergencyCallPage> {
                     } else {
                       return Center(child: CircularProgressIndicator());
                     }
-                  },
+                  },//ฟังชั่นสำหรับการโทรออก
                 ),
               ),
             ),
@@ -151,13 +151,13 @@ class EmergencyCallData extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: listEmer == null ? 0 : listEmer.length,
+      itemCount: listEmer == null ? 0 : listEmer.length,//ลิสเบอร์ทั้งหมก
       itemBuilder: (context, i) {
         return Container(
           padding: const EdgeInsets.all(5.0),
           child: GestureDetector(
             onTap: () => _onAlertButtonsPressed(context,
-                listEmer[i]['emercall_name'], listEmer[i]['emercall_tel']),
+                listEmer[i]['emercall_name'], listEmer[i]['emercall_tel']),//แสดงค่าเบอร์และชื่อที่เรากดเลือก
             child: Card(
               child: ListTile(
                 title: Column(
@@ -235,5 +235,5 @@ class EmergencyCallData extends StatelessWidget {
 
 _callNumber(String phoneNumber) async {
   String number = phoneNumber;
-  await FlutterPhoneDirectCaller.callNumber(number);
+  await FlutterPhoneDirectCaller.callNumber(number);//ฟังชั่นการโทรของฟัตเตอร์
 }

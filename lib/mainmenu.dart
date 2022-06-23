@@ -20,7 +20,8 @@ class MainMenuPage extends StatefulWidget {
 }
 
 class _MainMenuPageState extends State<MainMenuPage> {
-  GlobalKey<ScaffoldState> _scaffoldKey =  GlobalKey<ScaffoldState>();
+  GlobalKey<ScaffoldState> _scaffoldKey =
+      GlobalKey<ScaffoldState>(); //ใช้สร้างสเตท วิตเจ็ทต่าง ๆ
 
   String userid = '';
 
@@ -36,7 +37,7 @@ class _MainMenuPageState extends State<MainMenuPage> {
     var url = Uri.parse(
         "http://$ipcon/ihelpu/requestEmer.php?request_type=${request_type}&request_time=${time}&user_lat=${latitude}&user_lng=${longitude}&request_status=${request_status}&user_id=${userid}");
     http.get(url);
-  }
+  } //ส่งค่าขอความช่วยเหลือไปเก็บในดาต้าเบส
 
   @override
   void initState() {
@@ -46,7 +47,7 @@ class _MainMenuPageState extends State<MainMenuPage> {
         longitude = long;
       });
     });
-  }
+  } //บันทึกต่าละลอง
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +56,7 @@ class _MainMenuPageState extends State<MainMenuPage> {
     return SafeArea(
         child: Scaffold(
       key: _scaffoldKey,
-      drawer: DrawerMain(),
+      drawer: DrawerMain(), //สร้างโดเวอร์ขึ้นมา
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(65.0),
         child: AppBar(
@@ -111,6 +112,7 @@ class _MainMenuPageState extends State<MainMenuPage> {
                                                     primary: Colors.red),
                                                 onPressed: () {
                                                   requestEmergency(
+                                                      //ส่งบันทึกค่าไปดาต้า
                                                       'ฉุกเฉิน',
                                                       DateTime.now(),
                                                       latlonglocal,
@@ -120,6 +122,7 @@ class _MainMenuPageState extends State<MainMenuPage> {
                                                           (BuildContext
                                                               context) {
                                                     return WaitingPage(
+                                                        //ส่งไปหน้ารอการตอบรับ
                                                         request_type: 'ฉุกเฉิน',
                                                         request_locat:
                                                             latlonglocal);
@@ -255,7 +258,7 @@ class _MainMenuPageState extends State<MainMenuPage> {
                 Padding(
                   padding: EdgeInsets.only(top: 5),
                   child: Text(
-                    'หลังจากกดปุ่ม SOS คุณจะได้รับความ \n ช่วยเหลือภายใน 8 - 10 วินาที',
+                    'หลังจากกดปุ่ม SOS คุณจะได้รับความ \n ภายใน 1 นาที',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.prompt(
                         fontSize: 16, color: Colors.grey[400]),
@@ -269,7 +272,7 @@ class _MainMenuPageState extends State<MainMenuPage> {
                     columnWidths: const <int, TableColumnWidth>{
                       0: IntrinsicColumnWidth(),
                       1: FlexColumnWidth(2),
-                      2: FixedColumnWidth(2),
+                      2: FixedColumnWidth(2),//สร้างเทเบิลแยกมาใช้งาน
                     },
                     defaultVerticalAlignment: TableCellVerticalAlignment.middle,
                     children: <TableRow>[
@@ -297,7 +300,7 @@ class _MainMenuPageState extends State<MainMenuPage> {
                                       Navigator.of(context).push(
                                           MaterialPageRoute(
                                               builder: (BuildContext context) {
-                                        return EmergencyCallPage();
+                                        return EmergencyCallPage();//ส่งไปยังหน้าโทร
                                       }));
                                     },
                                   ),
@@ -335,7 +338,7 @@ class _MainMenuPageState extends State<MainMenuPage> {
                                         Navigator.of(context).push(
                                             MaterialPageRoute(builder:
                                                 (BuildContext context) {
-                                          return SearchHospitalPage(
+                                          return SearchHospitalPage(//ส่งไปยังหน้าโรงบาล
                                               provName: '');
                                         }));
                                       },

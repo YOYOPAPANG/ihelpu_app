@@ -132,7 +132,7 @@ class _EditProfileDriverState extends State<EditProfileDriver> {
     );
     setState(() {
       _images = File(image.path);
-    });
+    });//ดึงรูปภาพจากในเครื่อง
   }
 
   List a = List.empty();
@@ -451,7 +451,7 @@ class _EditProfileDriverState extends State<EditProfileDriver> {
                                                 Colors.white, // foreground
                                             onPressed: () {
                                               setState(() {
-                                                editprofile();
+                                                editprofile();//บักทึกข้อมทมูลที่แก้ไข
 
                                                 // Navigator.of(context).push(
                                                 //     MaterialPageRoute(

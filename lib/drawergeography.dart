@@ -44,7 +44,7 @@ class _DrawerGeographyState extends State<DrawerGeography> {
 
   Future<List> getprovinces1() async {
     final response = await http.get(Uri.parse(
-        "http://$ipcon/ihelpu/drawerprovinces.php?provinces=${geo[0]['geo_id']}"));
+        "http://$ipcon/ihelpu/drawerprovinces.php?provinces=${geo[0]['geo_id']}"));//ดึงค่าจากอาร์เรย์ภมุิภาคจังหวัดที่เลือก
     var jsondata = json.decode(response.body);
     setState(() {
       Loading = false;
@@ -151,7 +151,7 @@ class _DrawerGeographyState extends State<DrawerGeography> {
                                     padding: EdgeInsets.only(left: 5),
                                     child: ListTile(
                                       title: Text(
-                                        geo1[i]['province_name'],
+                                        geo1[i]['province_name'],//แสดงจังหวัดในภาคเหนือ
                                         style: GoogleFonts.prompt(fontSize: 14),
                                       ),
                                       trailing:
@@ -160,7 +160,7 @@ class _DrawerGeographyState extends State<DrawerGeography> {
                                         print(geo1[i]['province_id']);
                                         Navigator.push(context,
                                         MaterialPageRoute(
-                                          builder: (context) => SearchHospitalPage(
+                                          builder: (context) => SearchHospitalPage(//เสิชเสณ็จจะแสดงโรงบาลที่มีอยู่ในจังหวัดส่างค่ากลับไปที่เสิชโรงบาล
                                             provName: geo1[i]['province_id'])));
                                         // setState(() {
                                         //   selectprovin01 = geo1[i]['provinces_id'];

@@ -26,7 +26,7 @@ void cancelWaiting(
   var url = Uri.parse("http://$ipcon/ihelpu/cancelwaitingAccept.php");
   var response = await http.post(url, body: {
     "request_time": time.toString(),
-    "request_status": "0",
+    "request_status": "0",//ยกเลิกหรือเสร็จสิน
     "user_id": _username,
     "request_type": request_type,
     "request_locat": request_locat.toString()
@@ -54,7 +54,7 @@ class _WaitingPageState extends State<WaitingPage> {
       borderRadius: BorderRadius.circular(100),
       color: index.isEven ? Colors.orange : Colors.yellowAccent,
     ));
-  });
+  });//ตัวหมุนๆขยับๆ
 
   @override
   void initState() {
@@ -65,7 +65,7 @@ class _WaitingPageState extends State<WaitingPage> {
                 request_locat: widget.request_locat,
                 request_type: widget.request_type)
             .Checkaccp(context));
-  }
+  }//เช็คการตอบรับจากฝั่งเจ้าหน้าที่
 
   @override
   Widget build(BuildContext context) {

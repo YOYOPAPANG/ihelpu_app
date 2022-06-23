@@ -16,7 +16,7 @@ void main() {
     home: MyApp(),
     debugShowCheckedModeBanner: false,
   ));
-}
+}//รันแอป
 
 class MyApp extends StatefulWidget {
   @override
@@ -41,13 +41,13 @@ class _MyAppState extends State<MyApp> {
     } else {
       print(username);
     }
-  }
+  }//ต้องการแสดงชื่อไอดีขึ้นมา โดยจะทำการ if else ว่าค่านั้นแสดงออกมาได้ไหมและจะมาแสดงค่าในส่วนของ output ให้ดู
 
   Future<List> getData() async {
     final response = await http.get(Uri.parse(
         ("http://${ipcon}/ihelpu/getuserid.php?user_id=${username}")));
     return json.decode(response.body);
-  }
+  }//ดึงค่าจากตัวดาต้าเบส
 
   @override
   void initState() {
@@ -96,7 +96,7 @@ class Body extends StatelessWidget {
       backgroundColor: Colors.orange[600],
     );
   }
-}
+}//หน้าแสดงภาพโหลดเข้าแอพ
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -162,7 +162,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (BuildContext context) {
-                        return SignInPage();
+                        return SignInPage();//ส่งไปที่หน้าล็อคอินผู้ใช้
                       }),
                     );
                   },
@@ -188,7 +188,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (BuildContext context) {
-                        return SignInpageDriver();
+                        return SignInpageDriver();//ส่งไปหน้าล็อคอินเจ้าหน้าที่
                       }),
                     );
                   },
@@ -225,7 +225,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (BuildContext context) {
-                        return SignUpPages();
+                        return SignUpPages();//ส่งไปหน้าสมัครสมาชิก
                       }),
                     );
                   },
@@ -245,4 +245,4 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
-}
+}//หน้าเริ่มต้น

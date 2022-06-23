@@ -57,7 +57,7 @@ class _EditPassDriverPageState extends State<EditPassDriverPage> {
           artDialogArgs: ArtDialogArgs(
               type: ArtSweetAlertType.warning,
               title: "เปลี่ยนรหัสผ่านไม่สำเร็จ",
-              text: "โปรดตรวจสอบความถูกต้องของ \n password ของท่าน"));
+              text: "โปรดตรวจสอบความถูกต้องของ \n รหัสผ่านของท่าน"));
     }
   }
 

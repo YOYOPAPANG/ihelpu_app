@@ -32,7 +32,7 @@ void getCurrentLocation(Function(String, String) Callbackfunc) async {
     bool serviceEnabled;
     LocationPermission permission;
 
-    serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    serviceEnabled = await Geolocator.isLocationServiceEnabled();//ใช้สำหรับระบุตำแหน่ง
     if (!serviceEnabled) {
       return Future.error('Location services are disabled.');
     }
@@ -48,14 +48,14 @@ void getCurrentLocation(Function(String, String) Callbackfunc) async {
       if (permission == LocationPermission.denied) {
         return Future.error('Location permissions are denied');
       }
-    }
+    }//ฟังชั่นสำหรับการขออณุญาตเข้าถึงการระบุตำแหน่ง
 
   var position = await Geolocator.getCurrentPosition(
       desiredAccuracy: LocationAccuracy.best);
   var lat = position.latitude;
   var long = position.longitude;
 
-  // passing this to latitude and longitude strings
+  // passing this to latitude and longitude strings //เก็บค่าเป็นสติงเพื่อง่ายต่อการนำไปใช้งาน
   latitude = "$lat";
   longitude = "$long";
 
@@ -82,7 +82,7 @@ class _SearchHospitalPageState extends State<SearchHospitalPage> {
   List gethospit = List.empty();
   String getorderbyhospit = '';
 
-  Future<List> gethospital() async {
+  Future<List> gethospital() async {//แสดงโรงบาลที่อยู่ใกล้เราตามตำแหน่ง
     getCurrentLocation((lat, long) {
       setState(() {
         latitude = lat;
@@ -192,7 +192,7 @@ class _SearchHospitalPageState extends State<SearchHospitalPage> {
     return SafeArea(
       child: Scaffold(
         key: _scaffoldKey,
-        endDrawer: DrawerGeography(),
+        endDrawer: DrawerGeography(),//ดึงค่าจากจังหวัดมา
         appBar: AppBar(
           leading: IconButton(
             padding: EdgeInsets.only(right: 0),
@@ -225,7 +225,7 @@ class _SearchHospitalPageState extends State<SearchHospitalPage> {
               child: IconButton(
                   onPressed: () {
                     _scaffoldKey.currentState!.openEndDrawer();
-                  },
+                  },//เปิดปิดดอเวอร์
                   icon: Icon(CupertinoIcons.slider_horizontal_3),
                   color: Colors.black),
             ),

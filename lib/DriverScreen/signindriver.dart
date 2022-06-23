@@ -13,7 +13,7 @@ class SignInpageDriver extends StatefulWidget {
 }
 
 class _SignInpageDriverState extends State<SignInpageDriver> {
-  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();//เป็นคีหลักที่ต้องเขียนนำมาใช้งานสำหรับ flutter 
   TextEditingController officer_username = TextEditingController();
   TextEditingController officer_password = TextEditingController();
 
@@ -24,14 +24,14 @@ class _SignInpageDriverState extends State<SignInpageDriver> {
       "officer_password": officer_password.text
     });
     var data = json.decode(response.body);
-    print(data);
+    print(data);//แสดงค่าออกมา
 
     if (data != "Error") {
       SharedPreferences preferences = await SharedPreferences.getInstance();
       preferences.setString('officer_username', data);
       setState(() {
         Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-          return HomepageDriver();
+          return HomepageDriver();//ถ้าค่าที่ส่งเข้ามาถูกต้องให้เข้าไปหน้าล็อคอินเจ้าที่ได้
         }));
       });
     } else {
@@ -141,7 +141,7 @@ class _SignInpageDriverState extends State<SignInpageDriver> {
                           borderRadius: BorderRadius.circular(30)),
                       color: Colors.greenAccent[400],
                       onPressed: () {
-                        if (formKey.currentState!.validate()) {
+                        if (formKey.currentState!.validate()) {//ตรวจสอบค่าที่รับมาถูกต้องไหม
                           logindriver();
                         }
                         // Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
